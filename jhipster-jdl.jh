@@ -1,0 +1,16 @@
+entity Class {
+	className String
+}
+
+entity Note {
+	noteName String required,
+	noteCode String required,
+	className String required,
+	noteText TextBlob,
+    notePicturesURL String,
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Note{className} to Class
+}
